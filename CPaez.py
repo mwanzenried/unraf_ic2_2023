@@ -33,15 +33,15 @@ num2 = float(input("Ingresa el segundo número: "))
 # Realizar la operación seleccionada
 if opcion == '1':
     resultado = suma(num1, num2)
-    operacion = "suma"
+    operacion = "suma" #SUMA
 elif opcion == '2':
     resultado = resta(num1, num2)
-    operacion = "resta"
+    operacion = "resta" #RESTA
 elif opcion == '3':
     resultado = multiplicacion(num1, num2)
-    operacion = "multiplicación"
+    operacion = "multiplicación" #MULTIPLICACION
 elif opcion == '4':
-    resultado = division(num1, num2)
+    resultado = division(num1, num2) #DIVISION
     operacion = "división"
 else:
     print("Opción no válida")
@@ -50,3 +50,4 @@ else:
 # Mostrar el resultado
 if resultado is not None:
     print(f"El resultado de la {operacion} es: {resultado}")
+
