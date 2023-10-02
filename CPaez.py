@@ -37,14 +37,14 @@ if opcion == '1':
 elif opcion == '2':
     resultado = resta(num1, num2)
     operacion = "resta"
-elif opcion == '3':
+elif opcion == '3': #operacion multiplicacion
     resultado = multiplicacion(num1, num2)
     operacion = "multiplicación"
 elif opcion == '4':
     resultado = division(num1, num2)
     operacion = "división"
 else:
-    print("Opción no válida")
+    print("Opción no válida")  
     resultado = None
 
 # Mostrar el resultado
