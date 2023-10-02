@@ -1,0 +1,5 @@
+PI=3.14
+radio=int(input("Ingrese el radio del circulo: "))
+area=PI*radio*radio
+perim=2*PI*radio
+print("El area del circulo es:", round(area,2), "y el perimetro es: ", round(perim,2))
