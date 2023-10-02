@@ -1,52 +1,57 @@
-# Función para realizar una suma
+import math
+
 def suma(a, b):
     return a + b
 
-# Función para realizar una resta
 def resta(a, b):
     return a - b
 
-# Función para realizar una multiplicación
 def multiplicacion(a, b):
     return a * b
 
-# Función para realizar una división
 def division(a, b):
-    if b == 0:
-        return "Error: No se puede dividir por cero."
-    return a / b
+    if b != 0:
+        return a / b
+    else:
+        return "No se puede dividir por cero"
 
-# Menú de opciones
-print("Selecciona una operación:")
-print("1. Suma")
-print("2. Resta")
-print("3. Multiplicación")
-print("4. División")
+while True:
+    print("Operaciones disponibles:")
+    print("1. Suma")
+    print("2. Resta")
+    print("3. Multiplicación")
+    print("4. División")
+    print("5. Raíz cuadrada")
+    print("6. Elevar al cuadrado")
+    print("7. Salir")
 
-# Solicitar la selección del usuario
-opcion = input("Ingresa el número de la operación deseada: ")
+    opcion = int(input("Seleccione una operación (1/2/3/4/5/6/7): "))
 
-# Solicitar los números
-num1 = float(input("Ingresa el primer número: "))
-num2 = float(input("Ingresa el segundo número: "))
+    if opcion == 7:
+        break
 
-# Realizar la operación seleccionada
-if opcion == '1':
-    resultado = suma(num1, num2)
-    operacion = "suma"
-elif opcion == '2':
-    resultado = resta(num1, num2)
-    operacion = "resta"
-elif opcion == '3':
-    resultado = multiplicacion(num1, num2)
-    operacion = "multiplicación"
-elif opcion == '4':
-    resultado = division(num1, num2)
-    operacion = "división"
-else:
-    print("Opción no válida")
-    resultado = None
+    if opcion in [1, 2, 3, 4, 5, 6]:
+        if opcion == 5:
+            num1 = float(input("Ingrese el número: "))
+            if num1 >= 0:
+                print("La raíz cuadrada es:", math.sqrt(num1))
+            else:
+                print("No se puede calcular la raíz cuadrada de un número negativo.")
+        elif opcion == 6:
+            num1 = float(input("Ingrese el número: "))
+            print("El resultado de elevar al cuadrado es:", num1 ** 2)
+        else:
+            num1 = float(input("Ingrese el primer número: "))
+            num2 = float(input("Ingrese el segundo número: "))
 
-# Mostrar el resultado
-if resultado is not None:
-    print(f"El resultado de la {operacion} es: {resultado}")
+            if opcion == 1:
+                print("El resultado de la suma es:", suma(num1, num2))
+            elif opcion == 2:
+                print("El resultado de la resta es:", resta(num1, num2))
+            elif opcion == 3:
+                print("El resultado de la multiplicación es:", multiplicacion(num1, num2))
+            elif opcion == 4:
+                print("El resultado de la división es:", division(num1, num2))
+    else:
+        print("Opción no válida. Por favor, seleccione una opción válida.")
+
