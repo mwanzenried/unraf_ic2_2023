@@ -1,49 +1,52 @@
-# Función para sumar dos números
-def sumar(a, b):
+# Función para realizar una suma
+def suma(a, b):
     return a + b
 
-# Función para restar dos números
-def restar(a, b):
+# Función para realizar una resta
+def resta(a, b):
     return a - b
 
-# Función para multiplicar dos números
-def multiplicar(a, b):
+# Función para realizar una multiplicación
+def multiplicacion(a, b):
     return a * b
 
-# Función para dividir dos números
-def dividir(a, b):
-    if b != 0:
-        return a / b
-    else:
+# Función para realizar una división
+def division(a, b):
+    if b == 0:
         return "Error: No se puede dividir por cero."
+    return a / b
 
-# Función principal de la calculadora
-def calculadora():
-    print("Calculadora Simple")
-    print("Operaciones disponibles:")
-    print("1. Sumar")
-    print("2. Restar")
-    print("3. Multiplicar")
-    print("4. Dividir")
-    
-    # Solicitar al usuario que seleccione una operación
-    operacion = input("Por favor, seleccione una operación (1/2/3/4): ")
-    
-    # Solicitar al usuario que ingrese dos números
-    num1 = float(input("Ingrese el primer número: "))
-    num2 = float(input("Ingrese el segundo número: "))
-    
-    # Realizar la operación seleccionada
-    if operacion == '1':
-        print("Resultado: ", sumar(num1, num2))
-    elif operacion == '2':
-        print("Resultado: ", restar(num1, num2))
-    elif operacion == '3':
-        print("Resultado: ", multiplicar(num1, num2))
-    elif operacion == '4':
-        print("Resultado: ", dividir(num1, num2))
-    else:
-        print("Operación no válida. Por favor, seleccione una operación válida.")
+# Menú de opciones
+print("Selecciona una operación:")
+print("1. Suma")
+print("2. Resta")
+print("3. Multiplicación")
+print("4. División")
 
-# Llamar a la función principal de la calculadora
-calculadora()
+# Solicitar la selección del usuario
+opcion = input("Ingresa el número de la operación deseada: ")
+
+# Solicitar los números
+num1 = float(input("Ingresa el primer número: "))
+num2 = float(input("Ingresa el segundo número: "))
+
+# Realizar la operación seleccionada
+if opcion == '1':
+    resultado = suma(num1, num2)
+    operacion = "suma"
+elif opcion == '2':
+    resultado = resta(num1, num2)
+    operacion = "resta"
+elif opcion == '3':
+    resultado = multiplicacion(num1, num2)
+    operacion = "multiplicación"
+elif opcion == '4':
+    resultado = division(num1, num2)
+    operacion = "división"
+else:
+    print("Opción no válida")
+    resultado = None
+
+# Mostrar el resultado
+if resultado is not None:
+    print(f"El resultado de la {operacion} es: {resultado}")
