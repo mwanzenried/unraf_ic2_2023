@@ -50,3 +50,7 @@ else:
 # Mostrar el resultado
 if resultado is not None:
     print(f"El resultado de la {operacion} es: {resultado}")
+
+
+
+#comentario de fdominguez
